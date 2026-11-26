@@ -5,8 +5,7 @@ from fastapi import FastAPI
 import models
 from database.base import Base
 from database.connection import engine
-from routers import auth_router, game_router, player_router
-
+from routers import auth_router, game_router, player_router, leaderboard
 
 @asynccontextmanager
 async def lifespan(_: FastAPI):
@@ -23,6 +22,7 @@ app = FastAPI(
 app.include_router(auth_router)
 app.include_router(player_router)
 app.include_router(game_router)
+app.include_router(leaderboard.router)
 
 
 @app.get("/")

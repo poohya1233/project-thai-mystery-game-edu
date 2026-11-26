@@ -78,7 +78,7 @@ def register_user(payload: UserRegister, db: Session = Depends(get_db)):
         )
         if first_stage is not None:
             get_or_create_stage_progress(db, profile, first_stage, is_unlocked=True)
-
+    recalculate_leaderboard(db)
     db.commit()
     db.refresh(user)
     return user

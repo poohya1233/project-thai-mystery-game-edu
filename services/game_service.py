@@ -81,6 +81,7 @@ def submit_question_answer(
             profile.total_score += earned_score
             unlock_next_stage_in_chapter(db, profile, stage)
 
+    recalculate_leaderboard(db)
     db.commit()
     db.refresh(profile)
 

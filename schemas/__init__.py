@@ -13,6 +13,12 @@ from schemas.player import (
     StreakState,
 )
 
+
+from schemas.leaderboard import (
+    LeaderboardItemOut,
+    LeaderboardListOut,
+)
+
 __all__ = [
     "UserRegister",
     "UserLogin",
@@ -26,4 +32,6 @@ __all__ = [
     "ChapterOut",
     "AnswerSubmitIn",
     "AnswerSubmitOut",
+    "LeaderboardItemOut",
+    "LeaderboardListOut",
 ]
